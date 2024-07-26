@@ -4073,4 +4073,30 @@ input, select, textarea {
     cursor: pointer;
     font-size: 24px;
     padding: 10px;
+	flex-shrink: 0;
+}
+.video-container {
+    flex-grow: 10;
+    display: flex;
+    justify-content: center;
+}
+
+.description {
+    margin-top: 20px;
+}
+
+.description h3 {
+    font-weight: bold;
+}
+
+.nav-button img {
+    width: 75px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+iframe, img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
 }

@@ -118,11 +118,11 @@
 								</header>
 
 								<div class="flex-container">
-									<div class="nav-button left"><=</div>
+									<div class="nav-button left"><img src="images/leftarrow.jpeg" alt="Previous" title="Previous"></div>
 									<div class="video-container" style="flex-grow: 10">
 										<iframe id="project-video" width="950" height="534" src="https://www.youtube.com/embed/KLS2G0Zxf7A" title="Tamagotchi C++ Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 									</div>
-									<div class="nav-button right">=></div> 
+									<div class="nav-button right"><img src="images/rightarrow.jpeg" alt="Next" title="Next"></div> 
 								</div>
 
 								<div class="description">
@@ -410,28 +410,55 @@
 			<script>
 				const projects = [
     {
+        video: "images/Wonderland.png",
+        title: "WONDERLAND THEME PARK",
+        details: [
+            "Wonderland is a dynamic, user-friendly web application designed to manage and display a comprehensive database of theme park attractions, events, and guest services. This project is the culmination of collaborative efforts, utilizing the latest technologies to ensure a seamless and interactive user experience. By leveraging MySQL for database management, React for the front-end, and Vanilla Node.js for the backend, Wonderland offers a robust platform for theme park enthusiasts and administrators alike."
+        ],
+		link: "https://github.com/mraza328/wonderland"
+    },
+	{
         video: "https://www.youtube.com/embed/KLS2G0Zxf7A",
         title: "TAMAGOTCHI PET PROJECT",
         details: [
 		"A virtual pet simulation game designed to engage users with realistic pet care experiences. It allows players to create, feed, groom, and monitor the health of their virtual pets using object-oriented programming principles. The game features a time-based system to mimic real-life pet care, encouraging continuous interaction and engagement. Additionally, players can save and load pet data, enabling them to maintain their pet's progress across multiple sessions. This project offers an immersive and educational experience in virtual pet ownership."
         ]
     },
-    {
-        video: "https://www.youtube.com/embed/F2FmTdLtb_4",
-        title: "WONDERLAND THEME PARK",
-        details: [
-            "Global hit song...",
-            "Most viewed YouTube video...",
-            "Catchy tune and rhythm..."
-        ]
-    },
+    
 ];
 
 let currentProject = 0;
 
 function updateProject() {
     const project = projects[currentProject];
-    document.getElementById('project-video').src = project.video;
+    const videoContainer = document.querySelector('.video-container');
+    
+    videoContainer.innerHTML = ''; // Clear previous content
+
+    if (project.video.includes('youtube.com')) {
+        const iframe = document.createElement('iframe');
+        iframe.width = "950";
+        iframe.height = "534";
+        iframe.src = project.video;
+        iframe.title = project.title;
+        iframe.frameBorder = "0";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+        videoContainer.appendChild(iframe);
+    } else {
+		const link = document.createElement('a');
+        link.href = project.link;
+        link.target = "_blank"; // Open link in a new tab
+
+        const img = document.createElement('img');
+        img.src = project.video;
+        img.alt = project.title;
+        link.appendChild(img);
+
+        videoContainer.appendChild(link);
+    }
+
     document.getElementById('project-title').innerText = project.title;
 
     const detailsContainer = document.getElementById('project-details');

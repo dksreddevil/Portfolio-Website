@@ -67,8 +67,10 @@
 										<h5>HEADSTARTER AI</h5>
 										<ul>
 										  <li>Developed a portfolio website as the initial assignment, showcasing advanced design and development skills.</li>
-										  <li>Building and deploying 5 innovative AI projects to address various industry challenges, enhancing practical AI expertise and problem-solving abilities.</li>
-										  <li>Participate in multiple hackathons and networked with industry professionals to expand technical knowledge and industry connections, contributing to career development and collaborative opportunities.</li>
+										  <li>Built 5 AI projects, with the overall goal of achieving either $1000 in revenue, creating 1000 accounts, or having 1000
+											people on a waitlist.</li>
+										  <li>Engaged in a collaborative environment while working alongside SWE leaders from Google, Apple, Meta, and
+											Bloomberg, as well as other successful start-up companies.</li>
 										</ul>
 									  </div>
 									</div>
@@ -349,7 +351,7 @@
 			  </footer>
 					    <!-- Social accounts - Fixed to the right -->
 					<div class="socials">
-							<a href="Dhanush_Resume.pdf" target="_blank"
+							<a href="Final_Resume.pdf" target="_blank"
 							  ><img src="images/Resume.gif" alt="Resume" class="socicon" title="Resume"
 							/></a>
 							<a href="https://www.linkedin.com/in/dhanush-kumar-s-445b93246/" target="_blank"
@@ -409,6 +411,38 @@
 
 			<script>
 				const projects = [
+				{
+        video: "images/summarize1.png",
+        title: "SUMMARIZETUBE",
+        details: [
+            "SummarizeTube is an advanced web application designed to streamline the process of extracting and summarizing transcripts from YouTube videos. Using the power of Google Gemini Pro, this project converts lengthy video transcripts into concise, detailed notes, significantly enhancing productivity and efficiency for users. This project exemplifies the integration of cutting-edge AI technology with user-centric design, providing an efficient solution for content summarization."
+        ],
+		link: "https://summarize-tube-yt.streamlit.app/"
+    },
+	{
+        video: "images/doctor.png",
+        title: "HEALTH APP",
+        details: [
+            "The Health App is an innovative web application that leverages AI to estimate calorie content from food images, supporting users in making informed dietary choices. Powered by Google Gemini Pro, the app processes images in real-time, delivering accurate calorie estimates with a user-friendly interface built on Streamlit. By integrating cutting-edge AI with practical design, this app provides a valuable tool for anyone focused on health and wellness."
+        ],
+		link: "https://nutrition-doctor.streamlit.app/"
+    },
+	{
+        video: "images/Target.png",
+        title: "E-COMMERCE SALES DATA ANALYSIS",
+        details: [
+            "The Target Sales Data Analysis Project is a comprehensive data analytics initiative focused on extracting actionable insights from e-commerce sales data. By employing advanced SQL queries, the project improved data-driven decision-making, offering valuable trends and patterns. This highlights the integration of data analysis and automation to drive informed business decisions."
+        ],
+		link: "https://github.com/dksreddevil/e-commerce/blob/main/Target%20Data%20Analysis.ipynb"
+    },
+	{
+        video: "images/GameSpectrum.png",
+        title: "GAMESPECTRUM",
+        details: [
+            "GameSpectrum is a responsive and dynamic web application designed to enhance the gaming experience by providing users with real-time access to game data. The website features advanced sorting, filtering, and search functionalities, allowing users to easily explore and discover games. The platform is optimized for cross-device functionality, ensuring a seamless and accessible experience across all devices."
+        ],
+		link: "https://game-hub-livid-seven-71.vercel.app/"
+    },
     {
         video: "images/Wonderland.png",
         title: "WONDERLAND THEME PARK",
@@ -454,6 +488,8 @@ function updateProject() {
         const img = document.createElement('img');
         img.src = project.video;
         img.alt = project.title;
+		img.style.width = '950';
+		img.style.height = '534';
         link.appendChild(img);
 
         videoContainer.appendChild(link);
